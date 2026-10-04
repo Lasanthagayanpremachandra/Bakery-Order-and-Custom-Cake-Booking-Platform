@@ -19,7 +19,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Bakery Receipt & Invoice | La Petite Patisserie</title>
+    <title>Official Bakery Receipt & Invoice | Sweetora</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bakery-theme.css?v=3.0">
     <style>
         @media print {
@@ -72,16 +72,16 @@
             <div class="invoice-header">
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-                        <div class="brand-emblem" style="width: 38px; height: 38px; font-size: 1.25rem;">🎂</div>
-                        <span style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--c-cacao);">
-                            La Petite Patisserie
+                        <img src="<%= request.getContextPath() %>/images/sweetora-logo.png" alt="Sweetora Logo" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #F3C68F;">
+                        <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--c-cacao);">
+                            Sweetora
                         </span>
                     </div>
                     <div style="font-size: 0.88rem; color: var(--c-cacao-muted); line-height: 1.6;">
-                        Haute Pâtisserie & Custom Cake Studio<br>
+                        Cakes • Desserts • Sweeter Moments<br>
                         742 Evergreen Terrace, Suite 101, Springfield<br>
-                        Tel: +1 (555) 234-5678 &bull; billing@patisserie.com<br>
-                        Tax Registration: #LP-9048-VAT
+                        Tel: +1 (555) 234-5678 &bull; billing@sweetora.com<br>
+                        Tax Registration: #SW-9048-VAT
                     </div>
                 </div>
                 <div style="text-align: right; padding-right: 70px;">
@@ -105,7 +105,7 @@
                         <%= customerName %>
                     </div>
                     <div style="font-size: 0.85rem; color: var(--c-cacao-muted);">
-                        Verified Member & Patron of La Petite Patisserie
+                        Verified Member & Patron of Sweetora
                     </div>
                 </div>
                 <div>

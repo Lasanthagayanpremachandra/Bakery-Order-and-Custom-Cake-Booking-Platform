@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Share Your Feedback | La Petite Patisserie</title>
+    <title>Share Your Feedback | Sweetora</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bakery-theme.css?v=3.0">
     <style>
         .star-rating-interactive {

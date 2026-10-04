@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haute Pâtisserie Settlement | La Petite Patisserie</title>
+    <title>Haute Pâtisserie Settlement | Sweetora</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bakery-theme.css?v=3.0">
 </head>
 <body>
@@ -78,7 +78,7 @@
                     <div class="credit-card-preview">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div class="card-sim-chip"></div>
-                            <span style="font-size: 1.2rem; opacity: 0.8;">🎂 Patisserie VIP</span>
+                            <span style="font-size: 1.2rem; opacity: 0.8;">🎂 Sweetora VIP</span>
                         </div>
 
                         <div class="card-sim-number" id="previewCardNum">4242 •••• •••• 4242</div>

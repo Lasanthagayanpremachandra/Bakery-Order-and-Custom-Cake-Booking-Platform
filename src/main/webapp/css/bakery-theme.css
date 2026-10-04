@@ -1,5 +1,5 @@
 /* ==========================================================================
-   La Petite Patisserie - Haute Pâtisserie & Luxury Bakery Design System
+   Sweetora - Haute Pâtisserie & Luxury Bakery Design System
    Latest Modern UI: Glassmorphism, Luxury Warmth, Smooth Depth, Micro-Interactions
    ========================================================================== */
 
@@ -193,21 +193,29 @@ body::before {
 }
 
 .capsule-emblem {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FDE68A 0%, #DF831A 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.35rem;
     box-shadow: 0 3px 10px rgba(223, 131, 26, 0.25);
     transition: var(--ease-bounce);
     flex-shrink: 0;
+    overflow: hidden;
+    background: #FFF;
+    border: 2px solid #F3C68F;
+}
+
+.capsule-emblem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .capsule-brand:hover .capsule-emblem {
-    transform: rotate(-10deg) scale(1.08);
+    transform: rotate(-8deg) scale(1.08);
 }
 
 .capsule-text-block {

@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Directory (Admin) | La Petite Patisserie</title>
+    <title>Customer Directory (Admin) | Sweetora</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bakery-theme.css?v=3.0">
 </head>
 <body>

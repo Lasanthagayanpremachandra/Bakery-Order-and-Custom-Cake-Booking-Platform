@@ -111,21 +111,29 @@
 }
 
 .capsule-emblem {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FDE68A 0%, #DF831A 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
     box-shadow: 0 3px 10px rgba(223, 131, 26, 0.25);
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     flex-shrink: 0;
+    overflow: hidden;
+    background: #FFF;
+    border: 2px solid #F3C68F;
+}
+
+.capsule-emblem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .capsule-brand:hover .capsule-emblem {
-    transform: rotate(-10deg) scale(1.08);
+    transform: rotate(-8deg) scale(1.08);
 }
 
 .capsule-text-block {
@@ -739,10 +747,12 @@
     <nav class="bakery-nav-capsule">
         <!-- Zone 1: Brand Emblem & Wordmark -->
         <a href="<%= request.getContextPath() %>/index.jsp" class="capsule-brand">
-            <div class="capsule-emblem" aria-hidden="true">🎂</div>
+            <div class="capsule-emblem">
+                <img src="<%= request.getContextPath() %>/images/sweetora-logo.png" alt="Sweetora Logo">
+            </div>
             <div class="capsule-text-block">
-                <span class="capsule-brand-title">La Petite Patisserie</span>
-                <span class="capsule-brand-subtitle">HAUTE PÂTISSERIE & ATELIER</span>
+                <span class="capsule-brand-title">Sweetora</span>
+                <span class="capsule-brand-subtitle">CAKES &bull; DESSERTS &bull; SWEETER MOMENTS</span>
             </div>
         </a>
 
@@ -916,10 +926,12 @@
 <aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
     <div class="mobile-drawer-header">
         <div class="capsule-brand">
-            <div class="capsule-emblem">🎂</div>
+            <div class="capsule-emblem">
+                <img src="<%= request.getContextPath() %>/images/sweetora-logo.png" alt="Sweetora Logo">
+            </div>
             <div class="capsule-text-block">
-                <span class="capsule-brand-title">La Petite Patisserie</span>
-                <span class="capsule-brand-subtitle">HAUTE PÂTISSERIE</span>
+                <span class="capsule-brand-title">Sweetora</span>
+                <span class="capsule-brand-subtitle">CAKES &bull; DESSERTS &bull; SWEETER MOMENTS</span>
             </div>
         </div>
         <button type="button" class="btn-drawer-close" onclick="closeMobileDrawer()">✕</button>

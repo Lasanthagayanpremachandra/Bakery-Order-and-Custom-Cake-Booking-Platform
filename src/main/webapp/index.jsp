@@ -14,8 +14,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Petite Patisserie | Haute Pâtisserie & Custom Cake Studio</title>
-    <meta name="description" content="Artisan luxury bakery offering French pastries, hearth sourdough loaves, and custom couture cake booking.">
+    <title>Sweetora | Haute Pâtisserie & Custom Cake Studio</title>
+    <meta name="description" content="Artisan luxury bakery Sweetora offering handcrafted celebration cakes, French pastries, hearth sourdough loaves, and custom couture cake booking.">
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bakery-theme.css?v=3.0">
 </head>
 <body>

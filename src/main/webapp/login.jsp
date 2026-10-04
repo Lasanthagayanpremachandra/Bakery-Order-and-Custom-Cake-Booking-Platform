@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Sign In | La Petite Patisserie</title>
+    <title>Customer Sign In | Sweetora</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bakery-theme.css?v=3.0">
 </head>
 <body>
@@ -63,7 +63,7 @@
                 </button>
 
                 <div style="margin-top: 1.8rem; padding-top: 1.2rem; border-top: 1px solid var(--c-border-light); font-size: 0.9rem; text-align: center; color: var(--c-cacao-muted);">
-                    New to La Petite Patisserie? 
+                    New to Sweetora? 
                     <a href="<%= request.getContextPath() %>/customer/register" style="font-weight: 700; color: var(--c-caramel);">Register as a Member</a>
                 </div>
             </form>
