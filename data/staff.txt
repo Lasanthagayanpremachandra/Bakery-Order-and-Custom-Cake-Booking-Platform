@@ -1,0 +1,5 @@
+STF-001|Chef Jacques Pierre|MANAGER|Bakery Operations & Recipes|MORNING|admin123
+STF-002|Giselle Dupont|DECORATOR|Fondant Sculpture & Sugar Flowers|AFTERNOON|staff123
+STF-003|Mateo Rossi|BAKER|Sourdough & Artisanal Sponge Baking|MORNING|staff123
+STF-004|Chloe Bennett|DECORATOR|Royal Icing & Vintage Buttercream|EVENING|staff123
+STF-CEEF6|Lucie Delacroix|BAKER|Viennoiserie & Brioche|MORNING|pass

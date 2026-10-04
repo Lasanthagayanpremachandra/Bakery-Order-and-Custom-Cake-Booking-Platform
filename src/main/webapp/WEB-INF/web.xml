@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>Bakery Order and Custom Cake Booking Platform</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Customer Servlet -->
+    <servlet>
+        <servlet-name>CustomerServlet</servlet-name>
+        <servlet-class>com.bakery.servlet.CustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerServlet</servlet-name>
+        <url-pattern>/customer/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Product & Menu Servlet -->
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>com.bakery.servlet.ProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/product/*</url-pattern>
+        <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+
+    <!-- Standard Order Servlet -->
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.bakery.servlet.OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/order/*</url-pattern>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+
+    <!-- Custom Cake Booking Servlet -->
+    <servlet>
+        <servlet-name>CakeBookingServlet</servlet-name>
+        <servlet-class>com.bakery.servlet.CakeBookingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CakeBookingServlet</servlet-name>
+        <url-pattern>/booking/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Staff & Workload Management Servlet -->
+    <servlet>
+        <servlet-name>StaffServlet</servlet-name>
+        <servlet-class>com.bakery.servlet.StaffServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StaffServlet</servlet-name>
+        <url-pattern>/staff/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Payment & Billing Servlet -->
+    <servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>com.bakery.servlet.PaymentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/payment/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Review & Feedback Servlet -->
+    <servlet>
+        <servlet-name>ReviewServlet</servlet-name>
+        <servlet-class>com.bakery.servlet.ReviewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReviewServlet</servlet-name>
+        <url-pattern>/review/*</url-pattern>
+        <url-pattern>/reviews</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+</web-app>

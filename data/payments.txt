@@ -1,0 +1,7 @@
+INV-8D3532|ORD-C9E469|48.5|CARD|PAID|2026-09-17 02:48|Card Payment (**** **** **** 4242) Auth: TXN-1789593524149 (Full Payment)
+INV-6E7E37|ORD-1001|0.0|CASH|PAID|2026-09-17 01:53|Cash on Hand / Counter Settlement. Collected by: Cashier (Full Payment)
+INV-420E85|ORD-2DFB46|48.5|CARD|PAID|2026-09-16 00:27|Card Payment (**** **** **** 4242) Auth: TXN-1789498652416 (Full Payment)
+INV-1F0520|ORD-90E079|25.0|CARD|PAID|2026-09-16 00:23|Card Payment (**** **** **** 4242) Auth: TXN-1789498400740 (Full Payment)
+INV-501|ORD-77101|61.0|CARD|PAID|2026-09-14 10:31|Card Payment (**** **** **** 4242) Auth: TXN-884192 (Full Payment)
+INV-502|CAKE-901|39.0|CARD|DEPOSIT_PAID|2026-09-14 11:05|Card Payment (**** **** **** 1092) Auth: TXN-884210 (Advance Deposit)
+INV-503|ORD-77102|20.0|CASH|PAID|2026-09-15 08:16|Cash on Hand / Counter Settlement. Collected by: Cashier (Full Payment)

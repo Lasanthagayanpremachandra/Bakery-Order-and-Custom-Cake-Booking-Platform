@@ -1,0 +1,5 @@
+CUST-1001|Eleanor Vance|+1 (555) 234-5678|742 Evergreen Terrace, Springfield|eleanor@bakery.com|pass123|PREMIUM
+CUST-1002|Marcus Holloway|+1 (555) 876-5432|10880 Wilshire Blvd, Los Angeles|marcus@example.com|pass123|REGULAR
+CUST-1003|Sophia Lorenza|+1 (555) 345-9876|245 Park Avenue, New York|sophia@bakery.com|pass123|PREMIUM
+CUST-97A13A|Amelia Watson|+1 555-999-1111|Baker Street 221B|amelia@bakery.com|pass|PREMIUM
+CUST-42A463|Lasa|0787061414|35/1, Rajasinghagama, Werellagama|admin@gmail.com|123456|PREMIUM

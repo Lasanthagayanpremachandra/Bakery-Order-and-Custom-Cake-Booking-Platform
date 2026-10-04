@@ -1,0 +1,140 @@
+package com.bakery.servlet;
+
+import com.bakery.model.CakeBooking;
+import com.bakery.model.Customer;
+import com.bakery.model.Order;
+import com.bakery.model.Payment;
+import com.bakery.service.CakeBookingService;
+import com.bakery.service.OrderService;
+import com.bakery.service.PaymentService;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+import java.io.IOException;
+import java.util.List;
+
+/**
+ * Controller Servlet for Payment & Billing Management.
+ * Routes /payment/checkout, /payment/generate, /payment/invoice, /payment/history, /payment/update, /payment/delete
+ */
+@WebServlet(name = "PaymentServlet", urlPatterns = {"/payment/*"})
+public class PaymentServlet extends HttpServlet {
+    private PaymentService paymentService;
+    private OrderService orderService;
+    private CakeBookingService cakeBookingService;
+
+    @Override
+    public void init() {
+        paymentService = new PaymentService();
+        orderService = new OrderService();
+        cakeBookingService = new CakeBookingService();
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String path = req.getPathInfo();
+        if (path == null) path = "/history";
+
+        switch (path) {
+            case "/checkout": {
+                String refId = req.getParameter("refId");
+                double amount = 0.0;
+                try { amount = Double.parseDouble(req.getParameter("amount")); } catch (Exception ignored) {}
+                boolean isDeposit = "true".equalsIgnoreCase(req.getParameter("isDeposit"));
+
+                req.setAttribute("refId", refId);
+                req.setAttribute("amount", amount);
+                req.setAttribute("isDeposit", isDeposit);
+                req.getRequestDispatcher("/checkout.jsp").forward(req, resp);
+                break;
+            }
+            case "/invoice": {
+                String refId = req.getParameter("refId");
+                String method = req.getParameter("method");
+                boolean isDeposit = "true".equalsIgnoreCase(req.getParameter("isDeposit"));
+
+                // Calculate or fetch amount from order or booking
+                double amt = 0.0;
+                String custName = "Valued Customer";
+                if (refId != null && refId.startsWith("ORD-")) {
+                    Order o = orderService.getOrder(refId);
+                    if (o != null) {
+                        amt = o.getTotalAmount();
+                        custName = o.getCustomerName();
+                    }
+                } else if (refId != null && refId.startsWith("CAKE-")) {
+                    CakeBooking b = cakeBookingService.getBooking(refId);
+                    if (b != null) {
+                        amt = isDeposit ? b.getRequiredDeposit() : b.getTotalAmount();
+                        custName = b.getCustomerName();
+                    }
+                }
+
+                // Check if payment already exists
+                List<Payment> existing = paymentService.getHistory(refId);
+                Payment payment;
+                if (!existing.isEmpty()) {
+                    payment = existing.get(0);
+                } else {
+                    payment = paymentService.generateInvoice(refId, amt, method != null ? method : "CASH", isDeposit);
+                }
+
+                req.setAttribute("payment", payment);
+                req.setAttribute("customerName", custName);
+                req.getRequestDispatcher("/invoice.jsp").forward(req, resp);
+                break;
+            }
+            case "/history": {
+                String refId = req.getParameter("refId");
+                List<Payment> list;
+                if (refId != null && !refId.trim().isEmpty()) {
+                    list = paymentService.getHistory(refId);
+                } else {
+                    list = paymentService.getAllPayments();
+                }
+                req.setAttribute("payments", list);
+                req.getRequestDispatcher("/payment-history.jsp").forward(req, resp);
+                break;
+            }
+            case "/delete": {
+                String id = req.getParameter("id");
+                if (id != null) {
+                    paymentService.voidPayment(id);
+                }
+                resp.sendRedirect(req.getContextPath() + "/payment/history?msg=voided");
+                break;
+            }
+            default:
+                resp.sendRedirect(req.getContextPath() + "/payment/history");
+                break;
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String path = req.getPathInfo();
+        if (path == null) path = "/";
+
+        if ("/process".equalsIgnoreCase(path)) {
+            String refId = req.getParameter("refId");
+            double amount = 0.0;
+            try { amount = Double.parseDouble(req.getParameter("amount")); } catch (Exception ignored) {}
+            String method = req.getParameter("method");
+            boolean isDeposit = "true".equalsIgnoreCase(req.getParameter("isDeposit"));
+
+            Payment p = paymentService.generateInvoice(refId, amount, method, isDeposit);
+            resp.sendRedirect(req.getContextPath() + "/payment/invoice?refId=" + refId + "&method=" + method + "&isDeposit=" + isDeposit);
+        } else if ("/update-status".equalsIgnoreCase(path)) {
+            String id = req.getParameter("paymentId");
+            String status = req.getParameter("status");
+            paymentService.updateStatus(id, status);
+            resp.sendRedirect(req.getContextPath() + "/payment/history?msg=status_updated");
+        } else {
+            resp.sendRedirect(req.getContextPath() + "/payment/history");
+        }
+    }
+}

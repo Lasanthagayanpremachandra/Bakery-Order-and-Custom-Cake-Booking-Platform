@@ -1,0 +1,6 @@
+ORD-C9E469|CUST-42A463|Lasa|48.5|CONFIRMED|2026-09-17 02:48|35/1, Rajasinghagama, Werellagama|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake
+ORD-2DFB46|GUEST-2257|lasa|48.5|CONFIRMED|2026-09-16 00:27|kandy|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake
+ORD-90E079|CUST-97A13A|Amelia Watson|25.0|CONFIRMED|2026-09-16 00:23|Baker Street 221B|PROD-PS01:2:12.5:Golden Flaky French Croissant (Set of 3)
+ORD-77101|CUST-1001|Eleanor Vance|61.0|CONFIRMED|2026-09-14 10:30|742 Evergreen Terrace, Springfield|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake;PROD-PS01:1:12.5:Golden Flaky French Croissant (Set of 3)
+ORD-77102|CUST-1002|Marcus Holloway|20.0|READY|2026-09-15 08:15|10880 Wilshire Blvd, Los Angeles|PROD-PS02:2:6.5:Salted Caramel & Pecan Danish;PROD-BR01:1:8.5:Artisan Country Sourdough Loaf
+ORD-77103|CUST-1003|Sophia Lorenza|45.0|DELIVERED|2026-09-13 14:20|245 Park Avenue, New York|PROD-CK03:1:45.0:Red Velvet & Cream Cheese Crown Cake
