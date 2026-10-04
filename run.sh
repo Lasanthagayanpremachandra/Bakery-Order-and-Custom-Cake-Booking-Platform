@@ -19,5 +19,14 @@ if ! command -v mvn &> /dev/null; then
     exit 1
 fi
 
-# Compile and Launch Embedded Tomcat
-mvn clean compile exec:java
+# Disable macOS AppleDouble file generation on external volumes
+export COPYFILE_DISABLE=1
+
+# Compile
+mvn clean compile
+
+# Remove any stray dot-underscore metadata files from target
+find target -name "._*" -delete 2>/dev/null || true
+
+# Launch Embedded Tomcat
+mvn exec:java

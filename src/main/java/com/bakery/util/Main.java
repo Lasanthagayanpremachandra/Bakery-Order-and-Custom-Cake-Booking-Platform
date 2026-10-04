@@ -39,6 +39,7 @@ public class Main {
         // Mount compiled classes to WEB-INF/classes
         File classesDir = new File("target/classes");
         if (classesDir.exists()) {
+            cleanAppleDouble(classesDir);
             WebResourceRoot resources = new StandardRoot(ctx);
             resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
                     classesDir.getAbsolutePath(), "/"));
@@ -53,6 +54,18 @@ public class Main {
 
         tomcat.start();
         tomcat.getServer().await();
+    }
+
+    private static void cleanAppleDouble(File dir) {
+        File[] files = dir.listFiles();
+        if (files == null) return;
+        for (File f : files) {
+            if (f.isDirectory()) {
+                cleanAppleDouble(f);
+            } else if (f.getName().startsWith("._")) {
+                f.delete();
+            }
+        }
     }
 }
 
