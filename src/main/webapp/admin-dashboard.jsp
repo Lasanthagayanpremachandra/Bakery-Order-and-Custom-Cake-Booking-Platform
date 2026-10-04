@@ -185,7 +185,7 @@
                     <span style="font-size: 1.4rem;">💳</span>
                 </div>
                 <div style="font-size: 2.6rem; font-family: var(--font-heading); font-weight: 800; color: #065F46; margin: 0.4rem 0 0.2rem;">
-                    $<%= String.format("%.2f", totalRevenue) %>
+                    Rs. <%= String.format("%.2f", totalRevenue) %>
                 </div>
                 <div style="font-size: 0.82rem; color: var(--c-cacao-muted);">
                     <%= paidCount %> paid settlements in payments.txt
@@ -314,7 +314,7 @@
                                         <%= p.getDetails() != null ? p.getDetails() : "Settlement" %>
                                     </td>
                                     <td style="text-align: right; font-weight: 700; font-size: 1.05rem; color: var(--c-cacao);">
-                                        $<%= String.format("%.2f", p.getAmount()) %>
+                                        Rs. <%= String.format("%.2f", p.getAmount()) %>
                                     </td>
                                     <td>
                                         <span class="status-pill status-<%= p.getStatus() %>">

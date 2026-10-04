@@ -39,10 +39,10 @@
                 </div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
                     <button type="button" onclick="instantLogin('eleanor@bakery.com', 'pass123')" class="btn btn-secondary btn-sm" style="border-color: #E2B779; background: #FFFFFF; font-size: 0.8rem; padding: 0.5rem 0.7rem; justify-content: flex-start; text-align: left;">
-                        👑 <strong>Eleanor (Gold VIP)</strong>
+                        👑 <strong>Kavindu (Gold VIP)</strong>
                     </button>
                     <button type="button" onclick="instantLogin('marcus@example.com', 'pass123')" class="btn btn-secondary btn-sm" style="border-color: #E2B779; background: #FFFFFF; font-size: 0.8rem; padding: 0.5rem 0.7rem; justify-content: flex-start; text-align: left;">
-                        👤 <strong>Marcus (Regular)</strong>
+                        👤 <strong>Kasun (Regular)</strong>
                     </button>
                 </div>
             </div>
@@ -50,7 +50,7 @@
             <form id="customerLoginForm" action="<%= request.getContextPath() %>/customer/login" method="POST" class="form-panel">
                 <div class="form-group">
                     <label class="form-label">Email Address, Member ID, or Phone</label>
-                    <input type="text" name="email" id="loginEmail" class="form-control" placeholder="eleanor@bakery.com" required>
+                    <input type="text" name="email" id="loginEmail" class="form-control" placeholder="kavindu@sweetora.com" required>
                 </div>
 
                 <div class="form-group">

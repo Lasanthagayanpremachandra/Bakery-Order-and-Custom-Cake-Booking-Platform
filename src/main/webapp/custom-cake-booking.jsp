@@ -45,12 +45,12 @@
                     <div class="form-group">
                         <label class="form-label">Artisan Sponge & Filling Flavour</label>
                         <select name="flavour" class="form-control" required>
-                            <option value="Belgian Truffle" selected>Belgian Chocolate Truffle (+$15)</option>
+                            <option value="Belgian Truffle" selected>Belgian Chocolate Truffle (+Rs. 15)</option>
                             <option value="Madagascan Vanilla Bean">Madagascan Bourbon Vanilla Bean</option>
-                            <option value="Red Velvet Supreme">Red Velvet & Whipped Cream Cheese (+$15)</option>
-                            <option value="Matcha Pistachio Cream">Uji Matcha & Roasted Pistachio (+$18)</option>
-                            <option value="Salted Caramel Praline">Salted Butter Caramel & Praline (+$10)</option>
-                            <option value="Black Forest Kirsch">Black Forest Morello Cherry (+$10)</option>
+                            <option value="Red Velvet Supreme">Red Velvet & Whipped Cream Cheese (+Rs. 15)</option>
+                            <option value="Matcha Pistachio Cream">Uji Matcha & Roasted Pistachio (+Rs. 18)</option>
+                            <option value="Salted Caramel Praline">Salted Butter Caramel & Praline (+Rs. 10)</option>
+                            <option value="Black Forest Kirsch">Black Forest Morello Cherry (+Rs. 10)</option>
                         </select>
                     </div>
 
@@ -58,9 +58,9 @@
                         <label class="form-label">Cake Size & Serving Capacity</label>
                         <select name="size" class="form-control" required>
                             <option value="1kg">1kg (Serves 6 - 8)</option>
-                            <option value="2kg" selected>2kg (Serves 12 - 16) (+$25)</option>
-                            <option value="3kg">3kg (Serves 22 - 28) (+$50)</option>
-                            <option value="5kg">5kg Grand Gala (Serves 40+) (+$95)</option>
+                            <option value="2kg" selected>2kg (Serves 12 - 16) (+Rs. 25)</option>
+                            <option value="3kg">3kg (Serves 22 - 28) (+Rs. 50)</option>
+                            <option value="5kg">5kg Grand Gala (Serves 40+) (+Rs. 95)</option>
                         </select>
                     </div>
                 </div>
@@ -70,17 +70,17 @@
                         <label class="form-label">Number of Tiers</label>
                         <select name="tiers" class="form-control" required>
                             <option value="1">1 Single Artisan Tier</option>
-                            <option value="2" selected>2 Grand Architectural Tiers (+$30)</option>
-                            <option value="3">3 Royal Couture Tiers (+$65)</option>
+                            <option value="2" selected>2 Grand Architectural Tiers (+Rs. 30)</option>
+                            <option value="3">3 Royal Couture Tiers (+Rs. 65)</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Artisan Finish & Design Style</label>
                         <select name="design" class="form-control" required>
-                            <option value="Vintage Floral & Gold Leaf" selected>Vintage Floral & 24K Gold Leaf (+$30)</option>
-                            <option value="Custom Sculpted Fondant Art">Sculpted Fondant Art (+$40)</option>
-                            <option value="Chocolate Drip & Fresh Berries">Gourmet Chocolate Drip & Berries (+$15)</option>
+                            <option value="Vintage Floral & Gold Leaf" selected>Vintage Floral & 24K Gold Leaf (+Rs. 30)</option>
+                            <option value="Custom Sculpted Fondant Art">Sculpted Fondant Art (+Rs. 40)</option>
+                            <option value="Chocolate Drip & Fresh Berries">Gourmet Chocolate Drip & Berries (+Rs. 15)</option>
                             <option value="Modern Sculpted Waves">Modern Sculpted Waves</option>
                             <option value="Rustic Textured Buttercream">Rustic Swiss Buttercream</option>
                         </select>
@@ -108,7 +108,7 @@
 
                 <div class="form-group">
                     <label class="form-label">Piped Inscription / Cake Plaque Message</label>
-                    <input type="text" name="customMessage" class="form-control" placeholder="e.g. Forever in Love Eleanor & Arthur" value="Forever in Love">
+                    <input type="text" name="customMessage" class="form-control" placeholder="e.g. Happy 25th Birthday Kavindu!" value="Happy Birthday Kavindu!">
                 </div>
 
                 <h3 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--c-border); padding-bottom: 0.8rem;">
@@ -117,7 +117,7 @@
 
                 <div class="form-group">
                     <label class="form-label">Patron Full Name</label>
-                    <input type="text" name="customerName" class="form-control" value="<%= user != null ? user.getName() : "" %>" placeholder="e.g. Eleanor Vance" required>
+                    <input type="text" name="customerName" class="form-control" value="<%= user != null ? user.getName() : "" %>" placeholder="e.g. Kavindu Perera" required>
                 </div>
 
                 <div class="form-group" style="background: var(--c-gold-subtle); border: 1px solid #FDE68A; padding: 1.2rem; border-radius: var(--r-sm);">
@@ -157,10 +157,10 @@
                         Custom Cake Total
                     </div>
                     <div id="estimatedPrice" style="font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700; color: var(--c-cacao); margin: 0.3rem 0;">
-                        $105.00
+                        Rs. 105.00
                     </div>
                     <div style="font-size: 0.9rem; color: var(--c-caramel); font-weight: 700;">
-                        30% Advance Deposit: <span id="depositPrice">$31.50</span>
+                        30% Advance Deposit: <span id="depositPrice">Rs. 31.50</span>
                     </div>
                 </div>
 

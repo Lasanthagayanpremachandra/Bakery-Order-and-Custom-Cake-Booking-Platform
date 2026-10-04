@@ -735,7 +735,7 @@
             <span>Gold VIP Patrons receive <strong style="color: #FFD188;">12% OFF</strong> everything!</span>
         </div>
         <div class="announcement-right">
-            <span>📞 Atelier Concierge: +1 (555) 234-5678</span>
+            <span>📞 Customer Care & Orders: +94 76 749 4866</span>
             <span class="announcement-sep">|</span>
             <a href="<%= request.getContextPath() %>/booking/form" class="announcement-link">Reserve Custom Cake &rarr;</a>
         </div>
@@ -841,15 +841,15 @@
                     <a href="javascript:void(0)" onclick="demoFastLoginCustomer('eleanor@bakery.com', 'pass123')" class="demo-popover-row">
                         <span class="demo-row-avatar">👑</span>
                         <div>
-                            <strong>Eleanor Vance (Gold VIP)</strong>
-                            <small>Automatic 12% OFF • eleanor@bakery.com</small>
+                            <strong>Kavindu Perera (Gold VIP)</strong>
+                            <small>Automatic 12% OFF • kavindu@sweetora.com</small>
                         </div>
                     </a>
                     <a href="javascript:void(0)" onclick="demoFastLoginCustomer('marcus@example.com', 'pass123')" class="demo-popover-row">
                         <span class="demo-row-avatar">👤</span>
                         <div>
-                            <strong>Marcus Holloway (Regular)</strong>
-                            <small>Standard Patron • marcus@example.com</small>
+                            <strong>Kasun Silva (Regular)</strong>
+                            <small>Standard Patron • kasun@sweetora.com</small>
                         </div>
                     </a>
 

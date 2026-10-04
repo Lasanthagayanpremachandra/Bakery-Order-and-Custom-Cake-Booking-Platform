@@ -111,8 +111,10 @@
                                 </td>
                                 <td>
                                     <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                        <% if (p.getImageUrl() != null && !p.getImageUrl().trim().isEmpty()) { %>
-                                            <img src="<%= p.getImageUrl() %>" alt="<%= p.getName() %>" style="width: 44px; height: 44px; border-radius: var(--r-sm); object-fit: cover; border: 1px solid var(--c-border-light);">
+                                        <% if (p.getImageUrl() != null && !p.getImageUrl().trim().isEmpty()) { 
+                                               String adminImg = p.getImageUrl().startsWith("http") ? p.getImageUrl() : request.getContextPath() + (p.getImageUrl().startsWith("/") ? "" : "/") + p.getImageUrl();
+                                        %>
+                                            <img src="<%= adminImg %>" alt="<%= p.getName() %>" style="width: 44px; height: 44px; border-radius: var(--r-sm); object-fit: cover; border: 1px solid var(--c-border-light);">
                                         <% } %>
                                         <div>
                                             <strong style="font-size: 0.98rem; color: var(--c-cacao);"><%= p.getName() %></strong>
@@ -133,7 +135,7 @@
                                     </div>
                                 </td>
                                 <td style="text-align: right; font-weight: 800; font-size: 1.1rem; color: var(--c-cacao);">
-                                    $<%= String.format("%.2f", p.getPrice()) %>
+                                    Rs. <%= String.format("%.2f", p.getPrice()) %>
                                 </td>
                                 <td>
                                     <span style="font-weight: 700; font-size: 0.85rem; color: <%= p.getStock() > 5 ? "#047857" : (p.getStock() > 0 ? "#D97706" : "#DC2626") %>;">

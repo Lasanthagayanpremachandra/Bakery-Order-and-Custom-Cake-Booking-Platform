@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Unit Price ($ USD)</label>
+                        <label class="form-label">Unit Price (Rs.)</label>
                         <input type="number" step="0.01" name="price" class="form-control" value="<%= isEdit ? prod.getPrice() : "15.00" %>" required>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 REV-D319AF|PROD-PS01|CUST-97A13A|Amelia Watson|5|Incredible golden croissant texture, the best in town!|2026-09-16|true|VERIFIED
-REV-101|PROD-CK01|CUST-1001|Eleanor Vance|5|The Belgian dark chocolate cake was rich, silky, and an absolute showstopper for our dinner party!|2026-09-14|true|VERIFIED
-REV-102|PROD-PS01|CUST-1002|Marcus Holloway|5|Best croissants in the city. The honeycomb lamination and crunch are authentic French quality.|2026-09-15|true|VERIFIED
-REV-103|CAKE-901|CUST-1001|Eleanor Vance|5|Giselle outdid herself on the vintage gold floral cake. It looked like an edible piece of art!|2026-09-15|true|VERIFIED
-REV-104|PROD-BR01|GUEST|Liam O'Connor|4|The sourdough crust is wonderfully blistered and has that perfect tangy chewiness.|2026-09-13|true|PUBLIC
+REV-101|PROD-CK01|CUST-1001|Kavindu Perera|5|The Belgian dark chocolate cake was rich, silky, and an absolute showstopper for our dinner party!|2026-09-14|true|VERIFIED
+REV-102|PROD-PS01|CUST-1002|Kasun Silva|5|Best croissants in the city. The honeycomb lamination and crunch are authentic French quality.|2026-09-15|true|VERIFIED
+REV-103|CAKE-901|CUST-1001|Kavindu Perera|5|Giselle outdid herself on the vintage gold floral cake. It looked like an edible piece of art!|2026-09-15|true|VERIFIED
+REV-104|PROD-BR01|GUEST|Nuwan Fernando|4|The sourdough crust is wonderfully blistered and has that perfect tangy chewiness.|2026-09-13|true|PUBLIC

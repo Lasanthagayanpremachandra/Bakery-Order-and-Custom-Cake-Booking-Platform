@@ -108,7 +108,7 @@
                 <% for (Product p : featured) { %>
                     <div class="patisserie-card">
                         <div class="card-visual-wrap">
-                            <img src="<%= p.getImageUrl() != null && !p.getImageUrl().isEmpty() ? p.getImageUrl() : "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" %>" alt="<%= p.getName() %>">
+                            <img src="<%= p.getImageUrl() != null && !p.getImageUrl().isEmpty() ? (p.getImageUrl().startsWith("http") ? p.getImageUrl() : request.getContextPath() + (p.getImageUrl().startsWith("/") ? "" : "/") + p.getImageUrl()) : "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" %>" alt="<%= p.getName() %>">
                             <span class="card-top-tag"><%= p.getCategory() %></span>
                         </div>
                         <div class="card-content">
@@ -117,7 +117,7 @@
                             <p class="card-item-desc"><%= p.getDescription() %></p>
                             
                             <div class="card-action-bar">
-                                <span class="price-display">$<%= String.format("%.2f", p.getPrice()) %></span>
+                                <span class="price-display">Rs. <%= String.format("%.2f", p.getPrice()) %></span>
                                 <a href="<%= request.getContextPath() %>/order/add-cart?productId=<%= p.getProductId() %>&quantity=1" class="btn btn-primary btn-sm">
                                     + Add to Cart
                                 </a>

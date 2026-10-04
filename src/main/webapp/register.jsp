@@ -36,23 +36,23 @@
             <form action="<%= request.getContextPath() %>/customer/register" method="POST" class="form-panel">
                 <div class="form-group">
                     <label class="form-label">Full Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="e.g. Clara Oswald" required>
+                    <input type="text" name="name" class="form-control" placeholder="e.g. Kavindu Perera" required>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
                     <div class="form-group">
                         <label class="form-label">Phone Number</label>
-                        <input type="tel" name="phone" class="form-control" placeholder="+1 (555) 234-5678" required>
+                        <input type="tel" name="phone" class="form-control" placeholder="+94 76 749 4866" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Email Address</label>
-                        <input type="email" name="email" class="form-control" placeholder="clara@example.com" required>
+                        <input type="email" name="email" class="form-control" placeholder="kavindu@example.com" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Delivery Address</label>
-                    <input type="text" name="address" class="form-control" placeholder="742 Evergreen Terrace, Springfield" required>
+                    <input type="text" name="address" class="form-control" placeholder="Hedeniya, Kandy" required>
                 </div>
 
                 <div class="form-group">
@@ -64,7 +64,7 @@
                     <label class="form-label">Select Membership Tier</label>
                     <select name="type" class="form-control" style="font-weight: 600;">
                         <option value="PREMIUM" selected>👑 Gold VIP Member (Instant 12% OFF Everything)</option>
-                        <option value="REGULAR">Regular Patron (Standard Access + 5% on orders over $60)</option>
+                        <option value="REGULAR">Regular Patron (Standard Access + 5% on orders over Rs. 6,000)</option>
                     </select>
                 </div>
 

@@ -55,11 +55,11 @@ public class CustomerService {
         }
 
         // Lenient demo fallback
-        if (("eleanor@bakery.com".equals(query) || "eleanor".equals(query) || "cust-1001".equals(query)) && 
+        if (("kavindu@sweetora.com".equals(query) || "kavindu".equals(query) || "eleanor@bakery.com".equals(query) || "eleanor".equals(query) || "cust-1001".equals(query)) && 
             ("pass123".equals(pass) || "admin123".equals(pass) || "pass".equals(pass) || "password".equals(pass))) {
             return customerDAO.findById("CUST-1001");
         }
-        if (("marcus@example.com".equals(query) || "marcus".equals(query) || "cust-1002".equals(query)) && 
+        if (("kasun@sweetora.com".equals(query) || "kasun".equals(query) || "marcus@example.com".equals(query) || "marcus".equals(query) || "cust-1002".equals(query)) && 
             ("pass123".equals(pass) || "pass".equals(pass) || "password".equals(pass))) {
             return customerDAO.findById("CUST-1002");
         }

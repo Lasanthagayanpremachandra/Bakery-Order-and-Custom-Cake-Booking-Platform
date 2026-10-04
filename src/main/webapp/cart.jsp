@@ -74,14 +74,14 @@
                                         <h4 style="font-size: 1.15rem; color: var(--c-cacao);"><%= item.getProductName() %></h4>
                                         <div style="font-size: 0.78rem; color: var(--c-cacao-muted); font-family: monospace;">Ref: <%= item.getProductId() %></div>
                                         <div style="font-size: 0.82rem; color: var(--c-caramel); font-weight: 600; margin-top: 2px;">
-                                            $<%= String.format("%.2f", item.getUnitPrice()) %> each × <%= item.getQuantity() %>
+                                            Rs. <%= String.format("%.2f", item.getUnitPrice()) %> each × <%= item.getQuantity() %>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div style="display: flex; align-items: center; gap: 1.5rem;">
                                     <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--c-cacao);">
-                                        $<%= String.format("%.2f", item.getSubtotal()) %>
+                                        Rs. <%= String.format("%.2f", item.getSubtotal()) %>
                                     </span>
                                     <a href="<%= request.getContextPath() %>/order/remove-cart?productId=<%= item.getProductId() %>" 
                                        class="btn-logout" title="Remove item" style="width: 28px; height: 28px;">
@@ -107,35 +107,35 @@
 
                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.95rem;">
                         <span style="color: var(--c-cacao-muted);">Items Subtotal:</span>
-                        <strong style="font-size: 1.1rem;">$<%= String.format("%.2f", rawSubtotal) %></strong>
+                        <strong style="font-size: 1.1rem;">Rs. <%= String.format("%.2f", rawSubtotal) %></strong>
                     </div>
 
                     <% if (user != null) { %>
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; font-size: 0.95rem; color: #15803D; background: #DCFCE7; padding: 0.6rem 0.9rem; border-radius: var(--r-sm); border: 1px solid #BBF7D0;">
                             <span>👑 <%= user.getMembershipBadge() %>:</span>
-                            <strong>-$<%= String.format("%.2f", discount) %></strong>
+                            <strong>-Rs. <%= String.format("%.2f", discount) %></strong>
                         </div>
                     <% } else { %>
                         <div style="background: var(--c-gold-subtle); border: 1px solid #FDE68A; padding: 0.8rem 1rem; border-radius: var(--r-sm); margin-bottom: 1.2rem; font-size: 0.82rem; color: #92400E;">
-                            💡 Tip: <a href="<%= request.getContextPath() %>/customer/login" style="font-weight: 700; text-decoration: underline;">Sign in as Eleanor</a> to unlock <strong>12% Gold VIP discount</strong>!
+                            💡 Tip: <a href="<%= request.getContextPath() %>/customer/login" style="font-weight: 700; text-decoration: underline;">Sign in as Kavindu</a> to unlock <strong>12% Gold VIP discount</strong>!
                         </div>
                     <% } %>
 
                     <div style="display: flex; justify-content: space-between; align-items: baseline; margin: 1.2rem 0; padding-top: 1rem; border-top: 2px solid var(--c-border);">
                         <span style="font-size: 1.1rem; font-weight: 700; color: var(--c-cacao);">Payable Balance:</span>
                         <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--c-caramel);">
-                            $<%= String.format("%.2f", grandTotal) %>
+                            Rs. <%= String.format("%.2f", grandTotal) %>
                         </span>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Recipient Name</label>
-                        <input type="text" name="customerName" class="form-control" value="<%= user != null ? user.getName() : "" %>" placeholder="e.g. Eleanor Vance" required>
+                        <input type="text" name="customerName" class="form-control" value="<%= user != null ? user.getName() : "" %>" placeholder="e.g. Kavindu Perera" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Delivery Destination / Pickup Note</label>
-                        <input type="text" name="deliveryAddress" class="form-control" value="<%= user != null && user.getAddress() != null ? user.getAddress() : "" %>" placeholder="e.g. 742 Evergreen Terrace, or Counter Pickup at 10 AM" required>
+                        <input type="text" name="deliveryAddress" class="form-control" value="<%= user != null && user.getAddress() != null ? user.getAddress() : "" %>" placeholder="e.g. Hedeniya, Kandy, or Counter Pickup at 10 AM" required>
                     </div>
 
                     <div class="form-group">

@@ -64,8 +64,8 @@ function initVisualCakeStudio() {
 
         const deposit = Math.round(base * 0.30 * 100) / 100;
 
-        if (totalDisplay) totalDisplay.textContent = '$' + base.toFixed(2);
-        if (depositDisplay) depositDisplay.textContent = '$' + deposit.toFixed(2);
+        if (totalDisplay) totalDisplay.textContent = 'Rs. ' + base.toFixed(2);
+        if (depositDisplay) depositDisplay.textContent = 'Rs. ' + deposit.toFixed(2);
 
         // 2. Render visual tiers in canvas
         if (visualCanvas) {

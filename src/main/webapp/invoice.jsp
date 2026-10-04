@@ -79,9 +79,9 @@
                     </div>
                     <div style="font-size: 0.88rem; color: var(--c-cacao-muted); line-height: 1.6;">
                         Cakes • Desserts • Sweeter Moments<br>
-                        742 Evergreen Terrace, Suite 101, Springfield<br>
-                        Tel: +1 (555) 234-5678 &bull; billing@sweetora.com<br>
-                        Tax Registration: #SW-9048-VAT
+                        Hedeniya, Kandy, Sri Lanka<br>
+                        Tel: +94 76 749 4866 &bull; billing@sweetora.com<br>
+                        Tax Registration: #SW-7494-LKR
                     </div>
                 </div>
                 <div style="text-align: right; padding-right: 70px;">
@@ -144,7 +144,7 @@
                                 </span>
                             </td>
                             <td style="text-align: right; font-size: 1.15rem; font-weight: 800; color: var(--c-cacao);">
-                                $<%= String.format("%.2f", amount) %>
+                                Rs. <%= String.format("%.2f", amount) %>
                             </td>
                         </tr>
                     </tbody>
@@ -156,16 +156,16 @@
                 <div style="width: 320px; background: var(--c-cream); border: 1px solid var(--c-border); border-radius: var(--r-md); padding: 1.4rem;">
                     <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--c-cacao-muted); margin-bottom: 0.6rem;">
                         <span>Subtotal Processed:</span>
-                        <span>$<%= String.format("%.2f", amount) %></span>
+                        <span>Rs. <%= String.format("%.2f", amount) %></span>
                     </div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--c-cacao-muted); margin-bottom: 0.8rem;">
                         <span>Taxes & GST (Included):</span>
-                        <span>$0.00</span>
+                        <span>Rs. 0.00</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 2px solid var(--c-border); padding-top: 0.8rem;">
                         <span style="font-weight: 700; color: var(--c-cacao); font-size: 1.05rem;">Total Settled:</span>
                         <span style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 800; color: var(--c-caramel);">
-                            $<%= String.format("%.2f", amount) %>
+                            Rs. <%= String.format("%.2f", amount) %>
                         </span>
                     </div>
                 </div>

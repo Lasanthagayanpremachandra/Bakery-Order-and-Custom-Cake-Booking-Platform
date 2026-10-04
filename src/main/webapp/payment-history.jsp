@@ -59,7 +59,7 @@
             <div style="background: #FFFFFF; border: 1px solid var(--c-border); border-radius: var(--r-md); padding: 1.4rem; box-shadow: var(--shadow-subtle);">
                 <div style="font-size: 0.76rem; text-transform: uppercase; font-weight: 800; color: #059669; letter-spacing: 0.6px;">Total Settled Revenue</div>
                 <div style="font-size: 2rem; font-family: var(--font-heading); font-weight: 800; color: #065F46; margin-top: 0.3rem;">
-                    $<%= String.format("%.2f", totalRevenue) %>
+                    Rs. <%= String.format("%.2f", totalRevenue) %>
                 </div>
                 <div style="font-size: 0.8rem; color: var(--c-cacao-muted); margin-top: 0.2rem;"><%= activeCount %> valid transactions</div>
             </div>
@@ -124,7 +124,7 @@
                                     </div>
                                 </td>
                                 <td style="text-align: right; font-weight: 800; font-size: 1.05rem; color: var(--c-cacao);">
-                                    $<%= String.format("%.2f", p.getAmount()) %>
+                                    Rs. <%= String.format("%.2f", p.getAmount()) %>
                                 </td>
                                 <td>
                                     <span class="status-pill status-<%= p.getStatus() %>">

@@ -26,7 +26,7 @@
             <div style="text-align: center; margin-bottom: 2rem;">
                 <span class="hero-luxury-tag">
                     <span>📍</span>
-                    <span>Haute Pâtisserie Kitchen Stage Monitor</span>
+                    <span>Hedeniya, Kandy</span>
                 </span>
                 <h1 style="font-size: 2.5rem; margin-top: 0.3rem;">Order & Celebration Cake Status</h1>
                 <p style="color: var(--c-cacao-muted); max-width: 580px; margin: 0 auto; font-size: 0.95rem;">
@@ -120,7 +120,7 @@
                                         <%= b.getStatus() %>
                                     </span>
                                 </td>
-                                <td><strong style="font-size: 1.1rem;">$<%= String.format("%.2f", b.getTotalAmount()) %></strong></td>
+                                <td><strong style="font-size: 1.1rem;">Rs. <%= String.format("%.2f", b.getTotalAmount()) %></strong></td>
                                 <td>
                                     <div style="display: flex; gap: 0.5rem;">
                                         <a href="<%= request.getContextPath() %>/payment/invoice?refId=<%= b.getBookingId() %>" class="btn btn-secondary btn-sm" title="View Official Invoice">
@@ -187,7 +187,7 @@
                                             <%= o.getStatus() %>
                                         </span>
                                     </td>
-                                    <td><strong>$<%= String.format("%.2f", o.getTotalAmount()) %></strong></td>
+                                    <td><strong>Rs. <%= String.format("%.2f", o.getTotalAmount()) %></strong></td>
                                     <td>
                                         <div style="display: flex; gap: 0.5rem;">
                                             <a href="<%= request.getContextPath() %>/payment/invoice?refId=<%= o.getOrderId() %>" class="btn btn-secondary btn-sm">

@@ -7,7 +7,9 @@
                 <h4 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.55rem; color: #FFFFFF; font-weight: 700;">Sweetora</h4>
             </div>
             <p>Crafting artisanal memories with authentic pastry techniques, slow-fermented hearth breads, and custom couture cakes designed for your most precious moments.</p>
-            <p style="margin-top: 1rem; color: #E28743;"><strong>Open Daily:</strong> 7:00 AM – 9:00 PM</p>
+            <p style="margin-top: 0.8rem; color: #F8EFEA; font-size: 0.85rem;">📍 Hedeniya, Kandy, Sri Lanka</p>
+            <p style="margin-top: 0.3rem; color: #FFD188; font-size: 0.85rem; font-weight: 600;">📞 Hotline: +94 76 749 4866</p>
+            <p style="margin-top: 0.8rem; color: #E28743;"><strong>Open Daily:</strong> 7:00 AM – 9:00 PM</p>
         </div>
         <div class="footer-col">
             <h4>Explore Menu</h4>

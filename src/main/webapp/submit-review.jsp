@@ -59,7 +59,7 @@
 
                 <div class="form-group">
                     <label class="form-label">Your Name</label>
-                    <input type="text" name="customerName" class="form-control" value="<%= user != null ? user.getName() : "" %>" placeholder="e.g. Eleanor Vance" required>
+                    <input type="text" name="customerName" class="form-control" value="<%= user != null ? user.getName() : "" %>" placeholder="e.g. Kavindu Perera" required>
                 </div>
 
                 <div class="form-group">

@@ -43,7 +43,7 @@
                         <%= isDeposit ? "Advance 30% Kitchen Booking Deposit" : "Total Settlement Due" %>
                     </span>
                     <div style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 800; color: var(--c-caramel); margin: 0.2rem 0;">
-                        $<%= String.format("%.2f", amount) %>
+                        Rs. <%= String.format("%.2f", amount) %>
                     </div>
                     <% if (isDeposit) { %>
                         <span class="badge badge-verified" style="margin-top: 0.4rem;">
@@ -86,7 +86,7 @@
                         <div class="card-sim-footer">
                             <div>
                                 <span style="font-size: 0.65rem; opacity: 0.7; display: block;">CARDHOLDER</span>
-                                <span class="card-sim-holder" id="previewHolder">VALUED PATRON</span>
+                                <span class="card-sim-holder" id="previewHolder">KAVINDU PERERA</span>
                             </div>
                             <div>
                                 <span style="font-size: 0.65rem; opacity: 0.7; display: block;">EXPIRES</span>
@@ -97,7 +97,7 @@
 
                     <div class="form-group">
                         <label class="form-label">Name on Card</label>
-                        <input type="text" name="cardHolder" id="inputHolder" class="form-control" value="Eleanor Vance" placeholder="Cardholder full name" oninput="updateCardVisual()">
+                        <input type="text" name="cardHolder" id="inputHolder" class="form-control" value="Kavindu Perera" placeholder="Cardholder full name" oninput="updateCardVisual()">
                     </div>
 
                     <div class="form-group">
@@ -122,7 +122,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 1rem;">
-                    Confirm & Authorize Settlement of $<%= String.format("%.2f", amount) %> &rarr;
+                    Confirm & Authorize Settlement of Rs. <%= String.format("%.2f", amount) %> &rarr;
                 </button>
             </form>
         </div>
