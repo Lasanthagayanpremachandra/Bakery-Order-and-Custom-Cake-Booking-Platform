@@ -1,3 +1,4 @@
+INV-A5BC12|CAKE-9BC3EE|40.5|CARD|DEPOSIT_PAID|2026-10-05 22:42|Card Payment (**** **** **** 4242) Auth: TXN-1791220349505 (Advance Deposit)
 INV-37C261|ORD-13C71A|48.5|CARD|PAID|2026-10-04 17:15|Card Payment (**** **** **** 4242) Auth: TXN-1791114314333 (Full Payment)
 INV-8D3532|ORD-C9E469|48.5|CARD|PAID|2026-09-17 02:48|Card Payment (**** **** **** 4242) Auth: TXN-1789593524149 (Full Payment)
 INV-6E7E37|ORD-1001|0.0|CASH|PAID|2026-09-17 01:53|Cash on Hand / Counter Settlement. Collected by: Cashier (Full Payment)
