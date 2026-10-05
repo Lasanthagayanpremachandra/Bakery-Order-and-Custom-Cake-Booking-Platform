@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweetora | Haute Pâtisserie & Custom Cake Studio</title>
+    <title>Sweetora | Artisan Pastry & Custom Cake Studio</title>
     <meta name="description" content="Artisan luxury bakery Sweetora offering handcrafted celebration cakes, French pastries, hearth sourdough loaves, and custom couture cake booking.">
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bakery-theme.css?v=3.0">
 </head>
@@ -28,7 +28,7 @@
             <div class="hero-luxury-content">
                 <span class="hero-luxury-tag">
                     <span>✨</span>
-                    <span>Haute Pâtisserie & Pure French Butter Tradition</span>
+                    <span>Artisan Pastries & Pure Butter Craftsmanship</span>
                 </span>
                 <h1 class="hero-luxury-title">
                     Where Sweet Dreams Become <em>Edible Art</em>
@@ -53,7 +53,7 @@
                 <div class="floating-badge">
                     <span class="floating-badge-icon">👑</span>
                     <div style="text-align: left;">
-                        <div style="font-weight: 700; font-size: 0.88rem; color: var(--c-cacao);">Voted Best Pâtisserie 2026</div>
+                        <div style="font-weight: 700; font-size: 0.88rem; color: var(--c-cacao);">Voted Best Artisan Bakery 2026</div>
                         <div style="font-size: 0.76rem; color: var(--c-cacao-muted);">⭐ 4.95/5 Rating • 1,200+ Reviews</div>
                     </div>
                 </div>

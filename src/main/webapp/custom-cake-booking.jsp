@@ -20,7 +20,7 @@
         <div style="margin-bottom: 2.5rem; text-align: center;">
             <span class="hero-luxury-tag">
                 <span>🎨</span>
-                <span>Haute Couture Made-To-Order Cake Studio</span>
+                <span>Custom Bespoke Made-To-Order Cake Studio</span>
             </span>
             <h1 style="font-size: 3rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">The Custom Cake Atelier</h1>
             <p style="color: var(--c-cacao-muted); max-width: 650px; margin: 0 auto;">

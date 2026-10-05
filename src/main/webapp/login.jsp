@@ -17,10 +17,6 @@
     <main class="container">
         <div style="max-width: 500px; margin: 2.5rem auto;">
             <div style="text-align: center; margin-bottom: 2rem;">
-                <span class="hero-luxury-tag">
-                    <span>👑</span>
-                    <span>Patron Circle Authentication</span>
-                </span>
                 <h1 style="font-size: 2.5rem; margin-top: 0.4rem;">Customer Sign In</h1>
                 <p style="color: var(--c-cacao-muted); font-size: 0.95rem;">Access your custom cake atelier, saved deliveries & VIP savings.</p>
             </div>
