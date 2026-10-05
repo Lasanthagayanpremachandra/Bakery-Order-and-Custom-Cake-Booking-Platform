@@ -22,11 +22,15 @@ fi
 # Disable macOS AppleDouble file generation on external volumes
 export COPYFILE_DISABLE=1
 
+# Remove stray dot-underscore metadata files from workspace
+find . -name "._*" -delete 2>/dev/null || true
+
 # Compile
 mvn clean compile
 
 # Remove any stray dot-underscore metadata files from target
 find target -name "._*" -delete 2>/dev/null || true
+find . -name "._*" -delete 2>/dev/null || true
 
 # Launch Embedded Tomcat
 mvn exec:java

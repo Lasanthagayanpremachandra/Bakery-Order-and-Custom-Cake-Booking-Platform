@@ -37,6 +37,9 @@ public class PaymentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getPathInfo();
+        String servletPath = req.getServletPath();
+        if ("/checkout".equalsIgnoreCase(servletPath)) path = "/checkout";
+        else if ("/invoice".equalsIgnoreCase(servletPath)) path = "/invoice";
         if (path == null) path = "/history";
 
         switch (path) {
@@ -45,10 +48,26 @@ public class PaymentServlet extends HttpServlet {
                 double amount = 0.0;
                 try { amount = Double.parseDouble(req.getParameter("amount")); } catch (Exception ignored) {}
                 boolean isDeposit = "true".equalsIgnoreCase(req.getParameter("isDeposit"));
+                String method = req.getParameter("method");
+                if (method == null || method.trim().isEmpty()) {
+                    method = "CARD";
+                }
+
+                // If amount is 0, fetch it dynamically from order or booking
+                if (amount <= 0.0 && refId != null) {
+                    if (refId.startsWith("ORD-")) {
+                        Order o = orderService.getOrder(refId);
+                        if (o != null) amount = o.getTotalAmount();
+                    } else if (refId.startsWith("CAKE-")) {
+                        CakeBooking b = cakeBookingService.getBooking(refId);
+                        if (b != null) amount = isDeposit ? b.getRequiredDeposit() : b.getTotalAmount();
+                    }
+                }
 
                 req.setAttribute("refId", refId);
                 req.setAttribute("amount", amount);
                 req.setAttribute("isDeposit", isDeposit);
+                req.setAttribute("selectedMethod", method);
                 req.getRequestDispatcher("/checkout.jsp").forward(req, resp);
                 break;
             }
@@ -59,7 +78,7 @@ public class PaymentServlet extends HttpServlet {
 
                 // Calculate or fetch amount from order or booking
                 double amt = 0.0;
-                String custName = "Valued Customer";
+                String custName = "Valued Patron";
                 if (refId != null && refId.startsWith("ORD-")) {
                     Order o = orderService.getOrder(refId);
                     if (o != null) {
@@ -75,12 +94,12 @@ public class PaymentServlet extends HttpServlet {
                 }
 
                 // Check if payment already exists
-                List<Payment> existing = paymentService.getHistory(refId);
+                List<Payment> existing = (refId != null) ? paymentService.getHistory(refId) : List.of();
                 Payment payment;
                 if (!existing.isEmpty()) {
                     payment = existing.get(0);
                 } else {
-                    payment = paymentService.generateInvoice(refId, amt, method != null ? method : "CASH", isDeposit);
+                    payment = paymentService.generateInvoice(refId != null ? refId : "REF-GUEST", amt, method != null ? method : "CARD", isDeposit);
                 }
 
                 req.setAttribute("payment", payment);
@@ -124,10 +143,29 @@ public class PaymentServlet extends HttpServlet {
             double amount = 0.0;
             try { amount = Double.parseDouble(req.getParameter("amount")); } catch (Exception ignored) {}
             String method = req.getParameter("method");
+            if (method == null || method.trim().isEmpty()) method = "CARD";
             boolean isDeposit = "true".equalsIgnoreCase(req.getParameter("isDeposit"));
 
-            Payment p = paymentService.generateInvoice(refId, amount, method, isDeposit);
-            resp.sendRedirect(req.getContextPath() + "/payment/invoice?refId=" + refId + "&method=" + method + "&isDeposit=" + isDeposit);
+            String cardHolder = req.getParameter("cardHolder");
+            String cardNumber = req.getParameter("cardNumber");
+
+            // Process payment and record invoice
+            Payment p = paymentService.processPayment(refId, amount, method, isDeposit, cardNumber, cardHolder);
+
+            // Update order or cake booking status to CONFIRMED
+            if (refId != null && refId.startsWith("ORD-")) {
+                Order o = orderService.getOrder(refId);
+                if (o != null && "PENDING".equalsIgnoreCase(o.getStatus())) {
+                    orderService.updateStatus(refId, "CONFIRMED");
+                }
+            } else if (refId != null && refId.startsWith("CAKE-")) {
+                CakeBooking b = cakeBookingService.getBooking(refId);
+                if (b != null && "PENDING".equalsIgnoreCase(b.getStatus())) {
+                    cakeBookingService.updateStatus(refId, "CONFIRMED");
+                }
+            }
+
+            resp.sendRedirect(req.getContextPath() + "/payment/invoice?refId=" + (refId != null ? refId : "") + "&method=" + method + "&isDeposit=" + isDeposit + "&msg=payment_confirmed");
         } else if ("/update-status".equalsIgnoreCase(path)) {
             String id = req.getParameter("paymentId");
             String status = req.getParameter("status");

@@ -43,6 +43,8 @@ public class StaffServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getPathInfo();
+        String servletPath = req.getServletPath();
+        if ("/admin".equalsIgnoreCase(servletPath)) path = "/dashboard";
         if (path == null) path = "/dashboard";
 
         switch (path) {

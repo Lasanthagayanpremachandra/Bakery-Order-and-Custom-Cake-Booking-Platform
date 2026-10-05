@@ -22,22 +22,38 @@ public class PaymentService {
     }
 
     public Payment generateInvoice(String refId, double amount, String methodType, boolean isDeposit) {
+        return processPayment(refId, amount, methodType, isDeposit, null, null);
+    }
+
+    public Payment processPayment(String refId, double amount, String methodType, boolean isDeposit, String cardNumber, String cardHolder) {
         String pId = "INV-" + UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         String dateStr = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
 
         PaymentMethod methodObj;
         if ("CARD".equalsIgnoreCase(methodType)) {
-            methodObj = new CardPayment("4242", "Valued Customer");
+            String last4 = "8821";
+            if (cardNumber != null) {
+                String clean = cardNumber.replaceAll("[^0-9]", "");
+                if (clean.length() >= 4) {
+                    last4 = clean.substring(clean.length() - 4);
+                }
+            }
+            methodObj = new CardPayment(last4, cardHolder != null && !cardHolder.trim().isEmpty() ? cardHolder.trim() : "Valued Patron");
         } else {
-            methodObj = new CashPayment(amount, 0.0, "Cashier");
+            methodObj = new CashPayment(amount, 0.0, "Sweetora Hedeniya Cashier");
         }
 
-        String status = isDeposit ? "DEPOSIT_PAID" : "PAID";
-        String details = methodObj.getTransactionDetails() + (isDeposit ? " (Advance Deposit)" : " (Full Payment)");
+        String status = isDeposit ? "DEPOSIT_PAID" : ("CARD".equalsIgnoreCase(methodType) ? "PAID" : "PENDING_CASH");
+        String details = methodObj.getTransactionDetails() + (isDeposit ? " (Advance 30% Kitchen Deposit)" : " (Full Order Settlement)");
 
         Payment payment = new Payment(pId, refId, amount, methodObj.getMethodName(), status, dateStr, details);
         boolean ok = paymentDAO.save(payment);
         return ok ? payment : null;
+    }
+
+    public boolean updatePayment(Payment payment) {
+        if (payment == null) return false;
+        return paymentDAO.save(payment);
     }
 
     public List<Payment> getHistory(String refId) {

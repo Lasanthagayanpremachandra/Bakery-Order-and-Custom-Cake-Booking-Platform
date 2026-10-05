@@ -1,7 +1,7 @@
-CAKE-9BC3EE|GUEST-7791|lasa|Belgian Truffle|2kg|2|Vintage Floral & Gold Leaf|Wedding|2026-09-24|CONFIRMED|135.0|UNASSIGNED|Happy Birthday Kavindu!
+CAKE-9BC3EE|GUEST-7791|lasa|Belgian Truffle|2kg|2|Vintage Floral & Gold Leaf|Wedding|2026-09-24|DELIVERED|135.0|UNASSIGNED|Happy Birthday Kavindu!
 CAKE-76E775|CUST-97A13A|Amelia Watson|Belgian Truffle|3kg|2|Vintage Floral & Gold Leaf|Anniversary|2026-09-30|DELIVERED|160.0|UNASSIGNED|Happy Anniversary Amelia & John
 CAKE-428E4D|GUEST-4514|Charlotte|Red Velvet Supreme|2kg|2|Vintage Floral|Wedding|2026-09-28|CONFIRMED|135.0|UNASSIGNED|Forever Love
 CAKE-053B29|GUEST-5685|Charlotte Bronte|Red Velvet Supreme|2kg|2|Vintage Floral & Gold Leaf|Wedding|2026-09-28|CONFIRMED|135.0|UNASSIGNED|Forever Love
 CAKE-901|CUST-1001|Kavindu Perera|Belgian Truffle|2kg|2|Vintage Floral & Gold Leaf|Birthday|2026-09-20|DECORATING|130.0|STF-002|Happy 25th Birthday Kavindu!
 CAKE-902|CUST-1003|Sophia Lorenza|Matcha Pistachio Cream|3kg|3|Modern Sculpted Waves|Birthday|2026-09-22|DECORATING|168.0|STF-003|Sweet 25 Sophia!
-CAKE-903|CUST-1002|Kasun Silva|Red Velvet Supreme|1kg|1|Chocolate Drip & Berries|Graduation|2026-09-18|CONFIRMED|65.0|STF-004|Congratulations Kasun Class of 2026
+CAKE-903|CUST-1002|Kasun Silva|Red Velvet Supreme|1kg|1|Chocolate Drip & Berries|Graduation|2026-09-18|CANCELLED|65.0|STF-004|Congratulations Kasun Class of 2026

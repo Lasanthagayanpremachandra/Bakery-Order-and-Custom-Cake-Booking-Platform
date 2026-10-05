@@ -7,6 +7,9 @@
     List<Order> orders = (List<Order>) request.getAttribute("orders");
     @SuppressWarnings("unchecked")
     List<CakeBooking> bookings = (List<CakeBooking>) request.getAttribute("bookings");
+    String searchQuery = (String) request.getAttribute("searchQuery");
+    if (searchQuery == null) searchQuery = "";
+    int totalMatches = (orders != null ? orders.size() : 0) + (bookings != null ? bookings.size() : 0);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +25,7 @@
 
     <main class="container">
         <!-- Visual Progression Timeline Header -->
-        <div style="background: #FFFFFF; border: 1px solid var(--c-border); border-radius: var(--r-lg); padding: 2.5rem 3rem; margin-bottom: 3.5rem; box-shadow: var(--shadow-subtle);">
+        <div style="background: #FFFFFF; border: 1px solid var(--c-border); border-radius: var(--r-lg); padding: 2.5rem 3rem; margin-bottom: 2.5rem; box-shadow: var(--shadow-subtle);">
             <div style="text-align: center; margin-bottom: 2rem;">
                 <span class="hero-luxury-tag">
                     <span>📍</span>
@@ -59,17 +62,42 @@
             </div>
         </div>
 
-        <!-- Lookup bar -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.2rem; flex-wrap: wrap; gap: 1rem;">
+        <!-- Universal Order Search Bar -->
+        <div style="background: #FFFFFF; border: 1px solid var(--c-border); border-radius: var(--r-md); padding: 1.5rem 2rem; margin-bottom: 2.5rem; box-shadow: var(--shadow-subtle);">
+            <form action="<%= request.getContextPath() %>/order/track" method="GET" style="display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 280px;">
+                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--c-cacao); margin-bottom: 0.4rem;">
+                        🔍 Universal Live Order & Cake Lookup
+                    </label>
+                    <input type="text" name="q" value="<%= searchQuery %>" placeholder="Enter Order ID (e.g. ORD-1001), Booking ID (e.g. CAKE-901), or Patron Name..." class="form-control" style="background: var(--c-bg); border-radius: var(--r-full); padding: 0.75rem 1.4rem;">
+                </div>
+                <div style="display: flex; gap: 0.5rem; align-self: flex-end;">
+                    <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.5rem; border-radius: var(--r-full);">
+                        Track Status &rarr;
+                    </button>
+                    <% if (!searchQuery.isEmpty()) { %>
+                        <a href="<%= request.getContextPath() %>/order/track" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; border-radius: var(--r-full);">
+                            Reset
+                        </a>
+                    <% } %>
+                </div>
+            </form>
+
+            <% if (!searchQuery.isEmpty()) { %>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: #92400E; background: #FEF3C7; padding: 0.6rem 1rem; border-radius: var(--r-sm); border: 1px solid #FDE68A; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Showing results matching "<strong><%= searchQuery %></strong>": <strong><%= totalMatches %></strong> item(s) found.</span>
+                    <a href="<%= request.getContextPath() %>/order/track" style="font-weight: 700; text-decoration: underline; color: #92400E;">View All</a>
+                </div>
+            <% } %>
+        </div>
+
+        <!-- Section 1: Custom Cake Bookings -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
             <div>
-                <h2 style="font-size: 2rem;">🎂 Custom Cake Atelier Bookings</h2>
+                <h2 style="font-size: 1.8rem;">🎂 Custom Cake Atelier Bookings</h2>
                 <p style="color: var(--c-cacao-muted); font-size: 0.9rem;">Made-to-order couture cakes and wedding centerpieces.</p>
             </div>
-
-            <form action="<%= request.getContextPath() %>/order/track" method="GET" style="display: flex; gap: 0.5rem;">
-                <input type="text" name="q" placeholder="Enter Reference # (e.g. CAKE-901)" class="form-control" style="background: #FFFFFF; min-width: 280px; border-radius: var(--r-full);">
-                <button type="submit" class="btn btn-primary btn-sm">Find Order</button>
-            </form>
+            <a href="<%= request.getContextPath() %>/booking/form" class="btn btn-secondary btn-sm">+ New Cake Booking</a>
         </div>
 
         <!-- Custom Cake Bookings Table -->

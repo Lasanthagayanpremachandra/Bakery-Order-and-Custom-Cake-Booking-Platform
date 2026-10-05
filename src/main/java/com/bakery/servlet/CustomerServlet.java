@@ -30,6 +30,10 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getPathInfo();
+        String servletPath = req.getServletPath();
+        if ("/login".equalsIgnoreCase(servletPath)) path = "/login";
+        else if ("/register".equalsIgnoreCase(servletPath)) path = "/register";
+        else if ("/profile".equalsIgnoreCase(servletPath)) path = "/profile";
         if (path == null) path = "/";
 
         switch (path) {
@@ -76,6 +80,9 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getPathInfo();
+        String servletPath = req.getServletPath();
+        if ("/login".equalsIgnoreCase(servletPath)) path = "/login";
+        else if ("/register".equalsIgnoreCase(servletPath)) path = "/register";
         if (path == null) path = "/";
 
         switch (path) {

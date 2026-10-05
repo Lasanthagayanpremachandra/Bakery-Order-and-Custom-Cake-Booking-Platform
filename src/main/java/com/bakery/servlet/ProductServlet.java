@@ -30,6 +30,8 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getPathInfo();
+        String servletPath = req.getServletPath();
+        if ("/menu".equalsIgnoreCase(servletPath) || "/products".equalsIgnoreCase(servletPath)) path = "/list";
         if (path == null) path = "/list";
 
         switch (path) {

@@ -1,3 +1,9 @@
+ORD-B3B87E|CUST-1002|Kasun Silva|42.0|CONFIRMED|2026-10-06 03:35|Peradeniya Road, Kandy|PROD-CK02:1:42.0:Madagascan Vanilla & Berry Layer Cake
+ORD-AAC503|GUEST-7189|Kavindu Perera|48.5|CONFIRMED|2026-10-06 00:07|Hedeniya, Kandy, Sri Lanka|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake
+ORD-AC7799|GUEST-1407|Kavindu Perera|48.5|CONFIRMED|2026-10-06 00:00|Hedeniya, Kandy, Sri Lanka|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake
+ORD-78661D|CUST-1002|Kasun Silva|45.0|CONFIRMED|2026-10-05 22:54|Peradeniya Road, Kandy|PROD-CK03:1:45.0:Red Velvet & Cream Cheese Crown Cake
+ORD-7EAAA8|CUST-D9D375|Test 1|42.0|CONFIRMED|2026-10-05 22:46|kandy|PROD-CK02:1:42.0:Madagascan Vanilla & Berry Layer Cake
+ORD-C45E3A|CUST-D9D375|Test 1|48.5|CONFIRMED|2026-10-05 22:45|kandy|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake
 ORD-13C71A|CUST-1002|Kasun Silva|48.5|CONFIRMED|2026-10-04 17:15|Peradeniya Road, Kandy|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake
 ORD-C9E469|CUST-42A463|Lasa|48.5|CONFIRMED|2026-09-17 02:48|35/1, Rajasinghagama, Werellagama|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake
 ORD-2DFB46|GUEST-2257|lasa|48.5|CONFIRMED|2026-09-16 00:27|kandy|PROD-CK01:1:48.5:Belgian Dark Chocolate Ganache Cake

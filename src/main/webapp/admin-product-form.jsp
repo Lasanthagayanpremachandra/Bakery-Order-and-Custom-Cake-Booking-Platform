@@ -67,7 +67,7 @@
 
                     <div class="form-group">
                         <label class="form-label">Unit Price (Rs.)</label>
-                        <input type="number" step="0.01" name="price" class="form-control" value="<%= isEdit ? prod.getPrice() : "15.00" %>" required>
+                        <input type="number" step="0.01" name="price" class="form-control" value="<%= isEdit ? String.format(java.util.Locale.US, "%.2f", prod.getPrice()) : "1500.00" %>" placeholder="e.g. 1500.00" required>
                     </div>
                 </div>
 

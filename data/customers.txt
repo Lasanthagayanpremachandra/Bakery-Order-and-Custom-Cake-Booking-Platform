@@ -3,3 +3,4 @@ CUST-1002|Kasun Silva|+94 71 234 5678|Peradeniya Road, Kandy|marcus@example.com|
 CUST-1003|Sophia Lorenza|+1 (555) 345-9876|245 Park Avenue, New York|sophia@bakery.com|pass123|PREMIUM
 CUST-97A13A|Amelia Watson|+1 555-999-1111|Baker Street 221B|amelia@bakery.com|pass|PREMIUM
 CUST-42A463|Lasa|0787061414|35/1, Rajasinghagama, Werellagama|admin@gmail.com|123456|PREMIUM
+CUST-D9D375|Test 1|0787061314|kandy|test@gmail.com|Test1|PREMIUM

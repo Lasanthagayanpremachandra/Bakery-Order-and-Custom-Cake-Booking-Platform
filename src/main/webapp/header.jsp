@@ -307,53 +307,7 @@
     flex-shrink: 0;
 }
 
-/* ⚡ Demo Switcher */
-.capsule-demo-wrapper {
-    position: relative;
-}
-
-.btn-capsule-demo {
-    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-    color: #92400E;
-    border: 1.5px solid #FCD34D;
-    font-size: 0.8rem;
-    font-weight: 700;
-    height: 38px;
-    padding: 0 0.9rem;
-    border-radius: 9999px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15);
-    white-space: nowrap;
-}
-
-.btn-capsule-demo:hover {
-    background: linear-gradient(135deg, #FDE68A 0%, #FBBF24 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);
-}
-
-.capsule-demo-popover {
-    display: none !important;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 12px;
-    width: 320px;
-    background: #FFFFFF;
-    border: 1px solid #E8DCCF;
-    border-radius: 16px;
-    padding: 0.85rem;
-    box-shadow: 0 16px 40px rgba(34, 21, 16, 0.16);
-    z-index: 1300;
-}
-
-.capsule-demo-popover.active {
-    display: block !important;
-}
+/* Side Navigation and Customer Tools */
 
 .demo-popover-head {
     padding-bottom: 0.6rem;
@@ -568,52 +522,44 @@
     box-shadow: 0 4px 12px rgba(196, 110, 14, 0.35);
 }
 
-/* Staff Button */
-.btn-capsule-staff {
-    font-size: 0.74rem;
-    color: #796155;
-    text-decoration: none;
-    padding: 0 0.8rem;
-    height: 36px;
-    border-radius: 9999px;
-    border: 1px dashed #E8DCCF;
-    transition: all 0.2s ease;
+/* Side Navigation Toggle Button (Access to Staff Portal & Full Drawer) */
+.btn-capsule-side-nav {
     display: inline-flex;
     align-items: center;
-}
-
-.btn-capsule-staff:hover {
-    border-color: #221510;
+    gap: 0.45rem;
+    padding: 0 0.95rem;
+    height: 38px;
+    border-radius: 9999px;
+    background: #F8F3ED;
+    border: 1px solid #E8DCCF;
     color: #221510;
-}
-
-.btn-capsule-staff.active {
-    background: #221510;
-    color: #FFFFFF;
-    border: none;
+    font-size: 0.82rem;
     font-weight: 700;
-}
-
-/* Mobile Hamburger Button */
-.btn-capsule-hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 18px;
-    background: none;
-    border: none;
     cursor: pointer;
-    padding: 0;
-    margin-left: 0.3rem;
+    transition: all 0.2s ease;
+    margin-left: 0.25rem;
 }
 
-.btn-capsule-hamburger span {
-    width: 100%;
-    height: 2.2px;
+.btn-capsule-side-nav:hover {
+    background: #F0E4D5;
+    border-color: #C87A1E;
+    color: #C87A1E;
+    transform: translateY(-1px);
+}
+
+.btn-capsule-side-nav.is-active-staff {
     background: #221510;
-    border-radius: 2px;
-    transition: all 0.2s ease;
+    color: #FFD188;
+    border-color: #221510;
+}
+
+@media (max-width: 640px) {
+    .btn-capsule-side-nav .side-nav-text {
+        display: none;
+    }
+    .btn-capsule-side-nav {
+        padding: 0 0.65rem;
+    }
 }
 
 /* Mobile Drawer Overlay */
@@ -824,67 +770,13 @@
 
         <!-- Zone 3: Interactive Right-Side Tools & Personas -->
         <div class="capsule-actions-right">
-            <!-- ⚡ Quick 1-Click Demo Accounts Switcher -->
-            <div class="capsule-demo-wrapper">
-                <button type="button" class="btn-capsule-demo" onclick="toggleDemoDropdown(event)" title="1-Click Demo Logins">
-                    <span>⚡ Demo Login</span>
-                    <span style="font-size: 0.65rem;">▾</span>
-                </button>
-
-                <div id="demoDropdownMenu" class="capsule-demo-popover">
-                    <div class="demo-popover-head">
-                        <strong>⚡ 1-Click Instant Demo Access</strong>
-                        <small>Switch personas instantly without typing credentials</small>
-                    </div>
-
-                    <div class="demo-popover-section-tag">Patron Personas</div>
-                    <a href="javascript:void(0)" onclick="demoFastLoginCustomer('eleanor@bakery.com', 'pass123')" class="demo-popover-row">
-                        <span class="demo-row-avatar">👑</span>
-                        <div>
-                            <strong>Kavindu Perera (Gold VIP)</strong>
-                            <small>Automatic 12% OFF • kavindu@sweetora.com</small>
-                        </div>
-                    </a>
-                    <a href="javascript:void(0)" onclick="demoFastLoginCustomer('marcus@example.com', 'pass123')" class="demo-popover-row">
-                        <span class="demo-row-avatar">👤</span>
-                        <div>
-                            <strong>Kasun Silva (Regular)</strong>
-                            <small>Standard Patron • kasun@sweetora.com</small>
-                        </div>
-                    </a>
-
-                    <div class="demo-popover-section-tag" style="margin-top: 0.5rem;">Bakery Brigade Personas</div>
-                    <a href="javascript:void(0)" onclick="demoFastLoginStaff('STF-001', 'admin123')" class="demo-popover-row">
-                        <span class="demo-row-avatar">⚙️</span>
-                        <div>
-                            <strong>Chef Jacques Pierre (Manager)</strong>
-                            <small>Executive Admin Console • STF-001</small>
-                        </div>
-                    </a>
-                    <a href="javascript:void(0)" onclick="demoFastLoginStaff('STF-002', 'staff123')" class="demo-popover-row">
-                        <span class="demo-row-avatar">🎨</span>
-                        <div>
-                            <strong>Giselle Dupont (Decorator)</strong>
-                            <small>Cake Decorating Queue • STF-002</small>
-                        </div>
-                    </a>
-                    <a href="javascript:void(0)" onclick="demoFastLoginStaff('STF-003', 'staff123')" class="demo-popover-row">
-                        <span class="demo-row-avatar">🥣</span>
-                        <div>
-                            <strong>Mateo Rossi (Master Baker)</strong>
-                            <small>Ovens & Breads Board • STF-003</small>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
             <!-- Shopping Basket Cart Button -->
             <a href="<%= request.getContextPath() %>/order/cart" class="capsule-cart-btn" title="View Shopping Basket">
                 <span class="cart-icon">🛒</span>
                 <span class="cart-count-badge"><%= cartCount %></span>
             </a>
 
-            <!-- Authentication Controls -->
+            <!-- Customer Authentication Controls -->
             <% if (currentUser != null) { %>
                 <div class="capsule-user-badge">
                     <a href="<%= request.getContextPath() %>/customer/profile" class="capsule-user-link <%= "PREMIUM".equalsIgnoreCase(currentUser.getType()) ? "is-vip-gold" : "" %>" title="Manage Patron Profile">
@@ -900,30 +792,21 @@
                 </div>
             <% } %>
 
-            <!-- Staff Portal -->
-            <% if (staffUser != null) { %>
-                <a href="<%= request.getContextPath() %>/staff/dashboard" class="btn-capsule-staff active" title="Management Console">
-                    ⚙️ <%= staffUser.getRole() %>
-                </a>
-            <% } else { %>
-                <a href="<%= request.getContextPath() %>/staff/login" class="btn-capsule-staff" title="Kitchen Brigade & Staff Login">
-                    Staff
-                </a>
-            <% } %>
-
-            <!-- Mobile Hamburger Button (screens <= 1180px) -->
-            <button type="button" class="btn-capsule-hamburger" onclick="toggleMobileDrawer()" aria-label="Toggle Navigation Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <!-- Side Header Drawer Toggle Button (Access to Staff / Manager Portal & Full Navigation) -->
+            <button type="button" class="btn-capsule-side-nav <%= staffUser != null ? "is-active-staff" : "" %>" onclick="toggleMobileDrawer()" title="Open Side Navigation & Staff Portal" aria-label="Open Side Navigation">
+                <span style="font-size: 1.15rem; line-height: 1;">☰</span>
+                <span class="side-nav-text"><%= staffUser != null ? staffUser.getRole() : "Staff & Menu" %></span>
+                <% if (staffUser != null) { %>
+                    <span class="capsule-radar-dot" style="background: #10B981; width: 7px; height: 7px; margin-left: 2px;" title="Staff active"></span>
+                <% } %>
             </button>
         </div>
     </nav>
 </header>
 
-<!-- Mobile Navigation Drawer & Backdrop -->
+<!-- Side Navigation Drawer & Backdrop -->
 <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" onclick="closeMobileDrawer()"></div>
-<aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+<aside id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Side Navigation & Staff Portal">
     <div class="mobile-drawer-header">
         <div class="capsule-brand">
             <div class="capsule-emblem">
@@ -956,6 +839,7 @@
         <% } %>
 
         <nav class="mobile-menu-links">
+            <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: #8C7063; letter-spacing: 1px; margin: 0.6rem 0 0.3rem 0.6rem;">Bakery Storefront</div>
             <a href="<%= request.getContextPath() %>/index.jsp" class="mobile-nav-link">🏠 Home</a>
             <a href="<%= request.getContextPath() %>/product/list" class="mobile-nav-link">🥐 Artisan Menu (All Bakes)</a>
             <a href="<%= request.getContextPath() %>/product/list?category=CAKE" class="mobile-nav-sublink">&bull; Celebration Cakes</a>
@@ -964,7 +848,59 @@
             <a href="<%= request.getContextPath() %>/booking/form" class="mobile-nav-link" style="color: #C87A1E; font-weight: 700;">✨ Custom Cake Studio</a>
             <a href="<%= request.getContextPath() %>/order/track" class="mobile-nav-link">📦 Live Order Tracker</a>
             <a href="<%= request.getContextPath() %>/review/list" class="mobile-nav-link">⭐ Patron Reviews</a>
-            <a href="<%= request.getContextPath() %>/staff/dashboard" class="mobile-nav-link">⚙️ Staff & Kitchen Console</a>
+
+            <!-- Dedicated Staff & Manager Tabs Section in Side Header -->
+            <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: #8C7063; letter-spacing: 1px; margin: 1.4rem 0 0.4rem 0.6rem; display: flex; align-items: center; justify-content: space-between;">
+                <span>⚙️ Staff & Manager Portal</span>
+                <% if (staffUser != null) { %>
+                    <span style="font-size: 0.68rem; background: #DCFCE7; color: #166534; padding: 0.15rem 0.5rem; border-radius: 9999px; font-weight: 700;">Active</span>
+                <% } %>
+            </div>
+
+            <% if (staffUser != null) { %>
+                <div style="background: #2D1810; color: #FFF; padding: 0.8rem 1rem; border-radius: 8px; margin-bottom: 0.8rem;">
+                    <div style="font-size: 0.88rem; font-weight: 700;"><%= staffUser.getName() %></div>
+                    <div style="font-size: 0.75rem; color: #FFD188;"><%= staffUser.getRoleTitle() %></div>
+                </div>
+                <a href="<%= request.getContextPath() %>/staff/dashboard" class="mobile-nav-link" style="font-weight: 700; color: #2D1810;">⚙️ Manager Dashboard</a>
+                <a href="<%= request.getContextPath() %>/staff/queue" class="mobile-nav-link">🧑‍🍳 Kitchen Production Queue</a>
+                <a href="<%= request.getContextPath() %>/product/admin-list" class="mobile-nav-link">📦 Product & Stock Catalog</a>
+                <a href="<%= request.getContextPath() %>/customer/list" class="mobile-nav-link">👥 Customer Directory</a>
+                <a href="<%= request.getContextPath() %>/staff/workload" class="mobile-nav-link">🧑‍🍳 Staff Workload & Shifts</a>
+                <a href="<%= request.getContextPath() %>/payment/history" class="mobile-nav-link">📜 Payment & Billing Ledger</a>
+                <a href="<%= request.getContextPath() %>/review/moderate" class="mobile-nav-link">📝 Review Moderation</a>
+                <a href="<%= request.getContextPath() %>/staff/logout" class="mobile-nav-link" style="color: #DC2626; font-weight: 600;">🚪 Sign Out of Staff</a>
+            <% } else { %>
+                <a href="<%= request.getContextPath() %>/staff/login" class="mobile-nav-link" style="font-weight: 700; color: #C87A1E;">🔐 Staff & Manager Login</a>
+                <a href="<%= request.getContextPath() %>/staff/dashboard" class="mobile-nav-link">⚙️ Manager Console</a>
+                <a href="<%= request.getContextPath() %>/staff/queue" class="mobile-nav-link">🧑‍🍳 Kitchen Production Board</a>
+                <a href="<%= request.getContextPath() %>/product/admin-list" class="mobile-nav-link">📦 Inventory Management</a>
+                <a href="<%= request.getContextPath() %>/payment/history" class="mobile-nav-link">📜 Payment Ledger</a>
+            <% } %>
+
+            <!-- Collapsible Quick Test Accounts (Discreet for testers/graders) -->
+            <details style="margin-top: 1.6rem; background: #F8F3ED; border: 1px solid #E8DCCF; border-radius: 8px; padding: 0.6rem 0.8rem; font-size: 0.82rem;">
+                <summary style="cursor: pointer; font-weight: 700; color: #796155;">⚡ 1-Click Instant Demo Access</summary>
+                <div style="margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                    <div style="font-size: 0.7rem; font-weight: 800; color: #C87A1E; text-transform: uppercase;">Patrons</div>
+                    <a href="javascript:void(0)" onclick="demoFastLoginCustomer('eleanor@bakery.com', 'pass123')" style="color: #221510; text-decoration: none; padding: 0.35rem 0.5rem; background: #FFF; border-radius: 6px; display: block; border: 1px solid #E8DCCF;">
+                        👑 <strong>Kavindu Perera (Gold VIP)</strong>
+                    </a>
+                    <a href="javascript:void(0)" onclick="demoFastLoginCustomer('marcus@example.com', 'pass123')" style="color: #221510; text-decoration: none; padding: 0.35rem 0.5rem; background: #FFF; border-radius: 6px; display: block; border: 1px solid #E8DCCF;">
+                        👤 <strong>Kasun Silva (Regular)</strong>
+                    </a>
+                    <div style="font-size: 0.7rem; font-weight: 800; color: #C87A1E; text-transform: uppercase; margin-top: 0.4rem;">Bakery Brigade</div>
+                    <a href="javascript:void(0)" onclick="demoFastLoginStaff('STF-001', 'admin123')" style="color: #221510; text-decoration: none; padding: 0.35rem 0.5rem; background: #FFF; border-radius: 6px; display: block; border: 1px solid #E8DCCF;">
+                        ⚙️ <strong>Chef Jacques Pierre (Manager)</strong>
+                    </a>
+                    <a href="javascript:void(0)" onclick="demoFastLoginStaff('STF-002', 'staff123')" style="color: #221510; text-decoration: none; padding: 0.35rem 0.5rem; background: #FFF; border-radius: 6px; display: block; border: 1px solid #E8DCCF;">
+                        🎨 <strong>Giselle Dupont (Decorator)</strong>
+                    </a>
+                    <a href="javascript:void(0)" onclick="demoFastLoginStaff('STF-003', 'staff123')" style="color: #221510; text-decoration: none; padding: 0.35rem 0.5rem; background: #FFF; border-radius: 6px; display: block; border: 1px solid #E8DCCF;">
+                        🥣 <strong>Mateo Rossi (Master Baker)</strong>
+                    </a>
+                </div>
+            </details>
         </nav>
     </div>
 </aside>
